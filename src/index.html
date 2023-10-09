@@ -1,53 +1,53 @@
 <!DOCTYPE html>
 <html lang="ru">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Page title</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Lato:wght@700&family=Manrope:wght@200;300;400;500;600&family=Montserrat:wght@400;500&family=Roboto:wght@400;500&family=Source+Sans+3:wght@300;400;600&display=swap"
-    rel="stylesheet">
-  <!-- <link rel="stylesheet" href="./main.css" /> -->
-  <script type="module" src="./index.js"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        screens: {
-          'tablet': '768px',
-          // => @media (min-width: 768px) { ... }
-          'laptop': '1024px',
-          // => @media (min-width: 1024px) { ... }
-          'desktop': '1440px',
-          // => @media (min-width: 1440px) { ... }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page title</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Lato:wght@700&family=Manrope:wght@200;300;400;500;600&family=Montserrat:wght@400;500&family=Roboto:wght@400;500&family=Source+Sans+3:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <link rel="stylesheet" href="./main.css" /> -->
+    <script type="module" src="./index.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          screens: {
+            tablet: '768px',
+            // => @media (min-width: 768px) { ... }
+            laptop: '1024px',
+            // => @media (min-width: 1024px) { ... }
+            desktop: '1440px',
+            // => @media (min-width: 1440px) { ... }
+          },
+          colors: {
+            blue: '#5774CD',
+            blue1: '#F2FAFD',
+            black: '#000',
+            orange: '#FFB22C',
+            gray: '#444',
+          },
+          fontFamily: {
+            Comfortaa: ['Comfortaa'],
+            Lato: ['Lato'],
+            Manrope: ['Manrope'],
+            Montserrat: ['Montserrat'],
+            Roboto: ['Roboto'],
+            SourceSansPro: ['Source Sans Pro'],
+            SFProText: ['SF Pro Text'],
+            serif: ['Merriweather', 'serif'],
+          },
         },
-        colors: {
-          'blue': '#5774CD',
-          'blue1': "#F2FAFD",
-          'black': '#000',
-          'orange': '#FFB22C',
-        },
-        fontFamily: {
-          Comfortaa: ['Comfortaa'],
-          Lato: ['Lato'],
-          Manrope: ['Manrope'],
-          Montserrat: ['Montserrat'],
-          Roboto: ['Roboto'],
-          SourceSansPro: ['Source Sans Pro'],
-          SFProText: ['SF Pro Text'],
-          serif: ['Merriweather', 'serif'],
-        },
-      }
-    }
-  </script>
-</head>
+      };
+    </script>
+  </head>
 
-<body>
-  <!-- ❗️❗️❗️ Add partials like so for every page -->
-  <include src="./partials/HomePage/homePage.html"></include>
-</body>
-
+  <body>
+    <!-- ❗️❗️❗️ Add partials like so for every page -->
+    <include src="./partials/HomePage/homePage.html"></include>
+  </body>
 </html>

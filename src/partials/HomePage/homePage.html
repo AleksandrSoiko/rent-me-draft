@@ -13,9 +13,9 @@
         class="flex gap-10 font-Manrope text-lg font-semibold leading-[1.35rem]"
       >
         <li><a href="/">Buy</a></li>
-        <li><a href="/">Rent</p></li>
-        <li><a href="/">Sell</p></li>
-        <li><a href="/"> Agents</p></li>
+        <li><a href="/">Rent</a></li>
+        <li><a href="/">Sell</a></li>
+        <li><a href="/"> Agents</a></li>
       </ul>
     </nav>
     <ul class="flex gap-4">
@@ -999,8 +999,12 @@
     >
       Services we provide
     </p>
-    <ul class="grid gap-12 mx-16 grid-cols-1 grid-flow-col justify-center">
-      <li class="row-start-1 place-self-center">
+    <ul
+      class="max-md:flex max-md:flex-col max-md:justify-center grid gap-12 mx-16 grid-cols-2 justify-items-center"
+    >
+      <li
+        class="row-span-1 md:w-[22rem] md:flex flex-col items-center justify-between"
+      >
         <button
           class="w-[185px] mb-[1.02rem] font-Comfortaa leading-[normal] font-bold text-base text-center bg-blue text-[#fff] py-4 px-8 rounded-[0.625rem]"
         >
@@ -1009,9 +1013,18 @@
           src="images/mob/home-page/service1@2.png"
           alt="person1"
           width="200"
+          class="md:hidden"
+        />
+        <img
+          src="images/mob/home-page/service1@3.png"
+          alt="person1"
+          width="313"
+          class="max-md:hidden"
         />
       </li>
-      <li class="row-start-2">
+      <li
+        class="col-span-1 md:w-[22rem] md:flex flex-col items-center justify-between"
+      >
         <button
           class="w-[185px] mb-[1.02rem] font-Comfortaa leading-[normal] font-bold text-base text-center bg-blue text-[#fff] py-4 px-8 rounded-[0.625rem]"
         >
@@ -1020,9 +1033,18 @@
           src="images/mob/home-page/service2@2.png"
           alt="person3"
           width="200"
+          class="md:hidden"
+        />
+        <img
+          src="images/mob/home-page/service2@2.png"
+          alt="person3"
+          width="313"
+          class="max-md:hidden"
         />
       </li>
-      <li class="row-start-2">
+      <li
+        class="col-span-2 md:w-[22rem] md:flex flex-col items-center justify-between"
+      >
         <button
           class="w-[185px] mb-[1.02rem] font-Comfortaa leading-[normal] font-bold text-base text-center bg-blue text-[#fff] py-4 px-8 rounded-[0.625rem]"
         >
@@ -1031,27 +1053,39 @@
           src="images/mob/home-page/service3@2.png"
           alt="person2"
           width="200"
+          class="md:hidden"
+        />
+        <img
+          src="images/mob/home-page/service3@2.png"
+          alt="person2"
+          width="313"
+          class="max-md:hidden"
         />
       </li>
     </ul>
   </section>
-  <section class="my-12 mx-4">
+  <section class="my-12 md:my-16 mx-4">
     <p
-      class="font-Comfortaa text-2xl font-normal leading-[1.8rem] w-[11.875rem] text-center mr-[auto] ml-[auto]"
+      class="font-Comfortaa text-2xl font-normal leading-[1.8rem] w-[11.875rem] text-center mr-[auto] ml-[auto] md:text-[3.125rem] md:w-[100%]"
     >
       Easy to sell with RealEstate
     </p>
     <p
-      class="font-Manrope text-xl font-medium leading-[1.5rem] text-center my-6"
+      class="font-Manrope text-xl font-medium leading-[1.5rem] text-center my-6 md:hidden"
     >
       Add your advertisement to have opportunity to sell your properties
     </p>
     <div
-      class="flex items-center justify-between border-borderBlue border-[1px] rounded-lg px-5 py-4"
+      class="flex items-center justify-between border-borderBlue border-[1px] rounded-lg px-5 py-4 md:mt-10"
     >
       <svg width="126" height="97" viewBox="0 0 126 97" fill="none">
         <use href="partials/HomePage/sprite.svg#contecnt_block"></use>
       </svg>
+      <p
+        class="font-Manrope text-xl font-medium leading-[1.5rem] text-center my-6 max-md:hidden px-4"
+      >
+        Add your advertisement to have opportunity to sell your properties
+      </p>
       <svg
         width="84"
         height="53"
@@ -1064,64 +1098,101 @@
     </div>
   </section>
   <section
-    class="px-4 pt-12 pb-[3.06rem] mx-4 shadow-[8px_8px_24px_0px_rgba(87,116,205,0.1),-8px_-8px_24px_0_rgba(87,116,205,0.1)] rounded-lg relative"
+    class="overflow-hidden px-4 md:mx-8 md:px-8 pt-12 md:py-10 md:mt-32 md:mb-16 pb-[3.06rem] mx-4 shadow-[8px_8px_24px_0px_rgba(87,116,205,0.1),-8px_-8px_24px_0_rgba(87,116,205,0.1)] rounded-lg relative"
   >
-    <p class="font-Comfortaa text-2xl leading-[1.8rem] text-center">
+    <p
+      class="font-Comfortaa text-2xl leading-[1.8rem] text-center md:text-[3.125rem] md:leading-[3.75rem] md:text-start"
+    >
       Try to installing our RealEstate mobile app
     </p>
-    <div class="flex flex-col gap-2 items-start mt-[7.37rem]">
-      <svg width="181" height="52" viewBox="0 0 181 52">
-        <use href="partials/HomePage/sprite.svg#appstore"></use>
+    <p
+      class="font-Manrope text-2xl leading-[1.8rem] max-md:hidden w-[18.93rem] mt-8 mb-10"
+    >
+      Point the turned-on mobile phone camera to QR code
+    </p>
+    <div class="flex gap-4 items-center">
+      <svg width="160" height="160" viewBox="0 0 160 160" class="max-md:hidden">
+        <use href="partials/HomePage/sprite.svg#qr"></use>
       </svg>
-      <svg width="179" height="52" viewBox="0 0 179 52">
-        <use href="partials/HomePage/sprite.svg#googleplay"></use>
-      </svg>
+      <div
+        class="flex flex-col gap-2 md:gap-5 items-start mt-[7.37rem] md:mt-0"
+      >
+        <svg width="181" height="52" viewBox="0 0 181 52">
+          <use href="partials/HomePage/sprite.svg#appstore"></use>
+        </svg>
+        <svg width="179" height="52" viewBox="0 0 179 52">
+          <use href="partials/HomePage/sprite.svg#googleplay"></use>
+        </svg>
+      </div>
     </div>
     <img
       src="images/mob/home-page/footer1@3.png"
       alt="personFooter"
-      class="absolute bottom-[3.06rem] right-0 z-[-1]"
+      class="absolute bottom-[3.06rem] right-0 z-[-1] md:hidden"
       width="210"
+    />
+    <img
+      src="images/mob/home-page/footer2@1.png"
+      alt="personFooter"
+      class="absolute bottom-[3.06rem] md:bottom-0 right-0 z-[-1] max-md:hidden"
+      width="367"
     />
   </section>
   <footer
-    class="py-12 px-4 flex flex-col gap-8 font-Manrope text-lg font-semibold leading-[1.35rem] bg-gradient-to-t from-rose to-transparent"
+    class="py-12 px-4 md:px-8 md:pt-10 md:pb-16 font-Manrope text-lg font-semibold leading-[1.35rem] max-md:bg-gradient-to-t from-rose to-transparent"
   >
-    <div class="flex justify-between">
-      <ul class="flex flex-col gap-4">
-        <li>Buy</li>
-        <li>Rent</li>
-        <li>Sell</li>
-        <li>Agents</li>
-      </ul>
-      <ul class="flex flex-col gap-4">
-        <li>Terms of use</li>
-        <li>Security rules</li>
-        <li>Privacy Policy</li>
-        <li>Cookies settings</li>
-      </ul>
-    </div>
-    <div>
-      <svg width="111" height="40" viewBox="0 0 111 40">
-        <use href="partials/HomePage/sprite.svg#logo"></use>
-      </svg>
-      <p class="mt-4">
-        <span>2023</span><span>©</span>Real Estate. All rights reserved
-      </p>
-      <div class="flex gap-5 mt-6">
-        <svg width="41" height="40" viewBox="0 0 41 40">
-          <use href="partials/HomePage/sprite.svg#facebook"></use>
-        </svg>
-        <svg width="41" height="40" viewBox="0 0 41 40">
-          <use href="partials/HomePage/sprite.svg#instagram"></use>
-        </svg>
-        <svg width="41" height="40" viewBox="0 0 41 40">
-          <use href="partials/HomePage/sprite.svg#twitter"></use>
-        </svg>
-        <svg width="41" height="40" viewBox="0 0 41 40">
-          <use href="partials/HomePage/sprite.svg#telegram"></use>
-        </svg>
-      </div>
-    </div>
+    <ul
+      class="flex flex-col md:justify-around md:flex-row-reverse max-md:grid mx-[auto] grid-cols-2 justify-items-stretch"
+    >
+      <li class="row-span-1">
+        <ul class="flex flex-col gap-4">
+          <li>Buy</li>
+          <li>Rent</li>
+          <li>Sell</li>
+          <li>Agents</li>
+        </ul>
+      </li>
+      <li class="col-span-1">
+        <ul class="flex flex-col gap-4">
+          <li>Terms of use</li>
+          <li>Security rules</li>
+          <li>Privacy Policy</li>
+          <li>Cookies settings</li>
+        </ul>
+      </li>
+      <li class="col-span-2 max-md:mt-8">
+        <div>
+          <svg
+            width="177"
+            height="64"
+            viewBox="0 0 177 64"
+            fill="none"
+            class="max-md:hidden"
+          >
+            <use href="partials/HomePage/sprite.svg#logoLg"></use>
+          </svg>
+          <svg width="111" height="40" viewBox="0 0 111 40" class="md:hidden">
+            <use href="partials/HomePage/sprite.svg#logo"></use>
+          </svg>
+          <p class="mt-4">
+            <span>2023</span><span>©</span>Real Estate. All rights reserved
+          </p>
+          <div class="flex gap-5 mt-6">
+            <svg width="41" height="40" viewBox="0 0 41 40">
+              <use href="partials/HomePage/sprite.svg#facebook"></use>
+            </svg>
+            <svg width="41" height="40" viewBox="0 0 41 40">
+              <use href="partials/HomePage/sprite.svg#instagram"></use>
+            </svg>
+            <svg width="41" height="40" viewBox="0 0 41 40">
+              <use href="partials/HomePage/sprite.svg#twitter"></use>
+            </svg>
+            <svg width="41" height="40" viewBox="0 0 41 40">
+              <use href="partials/HomePage/sprite.svg#telegram"></use>
+            </svg>
+          </div>
+        </div>
+      </li>
+    </ul>
   </footer>
 </main>

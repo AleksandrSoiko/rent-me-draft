@@ -17,16 +17,17 @@
       tailwind.config = {
         theme: {
           screens: {
-            tablet: '768px',
+            md: '768px',
             // => @media (min-width: 768px) { ... }
-            laptop: '1024px',
+            lg: '1024px',
             // => @media (min-width: 1024px) { ... }
-            desktop: '1440px',
+            xl: '1440px',
             // => @media (min-width: 1440px) { ... }
           },
           colors: {
             blue: '#5774CD',
             blue1: '#F2FAFD',
+            light_blue: '#D7E5FF',
             blueText: '#008ACE',
             black: '#000',
             orange: '#FFB22C',
@@ -53,7 +54,6 @@
       };
     </script>
   </head>
-
   <body>
     <!-- ❗️❗️❗️ Add partials like so for every page -->
     <include src="./partials/HomePage/homePage.html"></include>

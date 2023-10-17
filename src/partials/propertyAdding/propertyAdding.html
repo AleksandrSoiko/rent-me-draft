@@ -7,7 +7,6 @@
       href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Lato:wght@700&family=Manrope:wght@200;300;400;500;600&family=Montserrat:wght@400;500&family=Roboto:wght@400;500&family=Source+Sans+3:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
-    <!-- <link rel="stylesheet" href="./main.css" /> -->
     <script type="module" src="../../index.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -32,6 +31,7 @@
             grayBg: 'rgba(255, 255, 255, 0.60)',
             borderBlue: '#D7E5FF',
             rose: 'rgba(255, 229, 210, 0.63)',
+            bgBlue: 'rgba(215, 229, 255, 0.60)',
           },
           fontFamily: {
             Comfortaa: ['Comfortaa'],
@@ -120,135 +120,210 @@
       </ul>
     </header>
     <section
-      class="mx-[auto] px-4 md:px-8 pt-12 md:py-16 pb-10 lg:pt-15 lg:pb-20 lg:w-[1180px]"
+      class="py-12 px-4 flex flex-col gap-8 mx-[auto] w-[22.5rem] lg:w-[73.75rem]"
     >
       <a
         href="/"
-        class="flex items-center mx-4 font-Manrope text-xl font-medium leading-[1.5rem] text-center"
+        class="flex items-center gap-4 font-Manrope text-xl font-medium leading-[1.5rem] text-center"
       >
-        <svg width="41" height="40" viewBox="0 0 41 40">
-          <use href="./sprite.svg#arrow-left"></use>
-        </svg>
+        <img src="./arrow-left.svg" alt="arrow-left" />
         Back to the search results
       </a>
-      <div class="my-10">
-        <img
-          src="./apartment-building-city-with-copy-space.png"
-          alt=""
-          class="mx-[auto] md:w-[580px]"
-        />
-        <div
-          class="w-[10.125rem] md:w-[11.5rem] mx-[auto] flex gap-6 items-center mt-6"
-        >
-          <span
-            class="w-3 h-3 bg-blue1 rounded-[100%] block md:w-4 md:h-4"
-          ></span>
-          <span
-            class="w-3 h-3 bg-blue1 rounded-[100%] block md:w-4 md:h-4"
-          ></span>
-          <span
-            class="w-[1.125rem] h-[1.125rem] bg-blue rounded-[100%] block md:w-6 md:h-6"
-          ></span>
-          <span
-            class="w-3 h-3 bg-blue1 rounded-[100%] block md:w-4 md:h-4"
-          ></span>
-          <span
-            class="w-3 h-3 bg-blue1 rounded-[100%] block md:w-4 md:h-4"
-          ></span>
-        </div>
-      </div>
-      <div class="flex flex-col gap-8 md:gap-10">
-        <div class="flex justify-between md:hidden">
-          <div class="flex gap-2">
-            <svg width="24" height="24" viewBox="0 0 24 24">
-              <use href="./sprite.svg#map"></use>
-            </svg>
-            <p class="font-Manrope text-lg font-light leading-1.35rem">Map</p>
-          </div>
-          <div class="flex gap-[1.12rem]">
-            <svg width="24" height="24" viewBox="0 0 24 24">
-              <use href="./sprite.svg#likemd"></use>
-            </svg>
-            <svg width="24" height="24" viewBox="0 0 24 24">
-              <use href="./sprite.svg#planHmd"></use>
-            </svg>
-          </div>
-        </div>
-        <div
-          class="mt-6 font-Manrope text-xl md:text-2xl leading-[1.5rem] md:leading-[1.8rem] flex flex-col md-max:gap-2 font-normal md:flex-row justify-between"
-        >
-          <div>
-            <p>2 bedroom flat to rent</p>
-            <p class="flex">
-              Whitehill Place, Glasgow, G31
-              <span class="flex gap-2 ml-8 max-md:hidden">
-                <svg width="24" height="24" viewBox="0 0 24 24">
-                  <use href="./sprite.svg#map"></use>
-                </svg>
-                Map
-              </span>
-            </p>
-          </div>
-          <div class="flex gap-[1.12rem] max-md:hidden">
-            <svg width="40" height="40" viewBox="0 0 40 40">
-              <use href="./sprite.svg#like"></use>
-            </svg>
-            <svg width="40" height="40" viewBox="0 0 40 40">
-              <use href="./sprite.svg#planH"></use>
-            </svg>
-          </div>
-        </div>
-        <div class="lg:flex lg:gap-[7.5rem]">
-          <div
-            class="flex flex-col gap-4 lg:w-[36.25rem] font-Comfortaa text-xl md:text-2xl md:font-semibold md:leading-[1.8rem] font-medium leading-[1.5rem]"
-          >
-            <p class="md:mb-5">£876 pcm</p>
-            <p class="text-xl md:mb-6">Property description</p>
-            <p class="text-base font-light font-Manrope md:text-xl">
-              This modern two bedroom property will come fully furnished and is
-              suitable for students. The property comprises of a large hall with
-              plenty of storage cupboards. Off the hall the modern kitchen has
-              fridge/freezer, dishwasher and washing machine. The lounge and
-              hall has laminate flooring and the two double bedrooms are
-              carpeted. The master bedroom comes with an ensuite bathroom with
-              walk in shower. The bathroom also has a shower over the bath.
-            </p>
-          </div>
-          <div class="lg:w-[30rem]">
-            <div class="flex justify-between">
-              <p
-                class="font-Comfortaa text-xl font-medium leading-[1.5rem] mb-4 mt-8"
-              >
-                Agent details
-              </p>
-              <p class="flex items-center gap-1">
-                <svg width="18" height="18" viewBox="0 0 18 18">
-                  <use href="./sprite.svg#star"></use></svg
-                ><span class="font-Manrope text-xs leading-[1.125rem]"
-                  >4.9</span
-                >
-              </p>
-            </div>
-            <div class="font-Manrope text-lg leading-[1.68rem] mb-6">
-              <p>Mcrae's Property Services</p>
-              <p class="font-light">Highams Park</p>
-              <p class="font-light">
-                18 The Avenue Highams Park, London E4 9LD
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="flex gap-4 max-md:justify-center">
+      <h3
+        class="font-Comfortaa text-2xl leading-[1.8rem] lg:text-[3.125rem] lg:leading-[3.75rem]"
+      >
+        New property adding
+      </h3>
+      <div>
+        <div class="mb-5 flex gap-4 justify-center">
           <button
-            class="px-2 py-[0.625rem] text-[#fff] whitespace-nowrap text-center bg-orange text-ellipsis font-Comfortaa text-sm font-semibold w-[8.75rem] rounded-[0.625rem]"
+            class="font-Comfortaa text-lg relative font-normal leading-[1.8rem] px-4 py-2 bg-blue rounded text-blue1 md:text-xl md:font-semibold md:leading-[1.5rem] md:px-8 md:py-4"
           >
-            Email</button
-          ><button
-            class="px-2 py-[0.625rem] whitespace-nowrap text-center border-[1px] border-orange text-ellipsis font-Comfortaa text-sm font-semibold w-[8.75rem] rounded-[0.625rem]"
+            Rent out
+            <svg
+              class="absolute top-[55px] left-[65px] max-lg:hidden"
+              width="25"
+              height="17"
+              viewBox="0 0 25 17"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12.5 17L0.808656 0.5L24.1913 0.500002L12.5 17Z"
+                fill="#5774CD"
+              />
+            </svg>
+          </button>
+          <button
+            class="font-Comfortaa text-lg px-4 py-2 bg-blue1 rounded text-blue md:text-xl md:font-semibold md:leading-[1.5rem] md:px-8 md:py-4"
           >
-            Call
+            Buy out
           </button>
         </div>
+        <form
+          action=""
+          class="flex flex-col gap-6 lg:mb-[2.19rem] lg:grid-cols-2 lg:grid lg:rounded-[0.75rem] lg:shadow-[0px_4px_16px_0px_#D7E5FF] lg:py-10 lg:px-10"
+        >
+          <label
+            for="title"
+            class="font-Manrope text-base font-medium leading-[1.2rem]"
+          >
+            Title*
+            <input
+              type="text"
+              name="title"
+              id="title"
+              class="w-[100%] px-4 py-4 bg-bgBlue mt-2 rounded-[0.5rem] opacity-[0.4]"
+            />
+          </label>
+          <label
+            for="Address"
+            class="font-Manrope text-base font-medium leading-[1.2rem]"
+          >
+            Address*
+            <input
+              type="text"
+              name="Address"
+              id="Address"
+              class="w-[100%] px-4 py-4 bg-bgBlue mt-2 rounded-[0.5rem] opacity-[0.4]"
+            />
+          </label>
+          <label
+            for="Price"
+            class="font-Manrope text-base font-medium leading-[1.2rem] lg:mt-8"
+          >
+            Price*
+            <input
+              type="number"
+              name="Price"
+              id="Price"
+              class="w-[100%] px-4 py-4 bg-bgBlue mt-2 rounded-[0.5rem] opacity-[0.4]"
+            />
+          </label>
+          <label
+            for="bedrooms"
+            class="font-Manrope text-base font-medium leading-[1.2rem] lg:mt-8"
+          >
+            Number of bedrooms*
+            <input
+              type="number"
+              name="bedrooms"
+              id="bedrooms"
+              class="w-[100%] px-4 py-4 bg-bgBlue mt-2 rounded-[0.5rem] opacity-[0.4]"
+            />
+          </label>
+          <label
+            for="bedrooms"
+            class="font-Manrope text-base font-medium leading-[1.2rem] col-span-2 lg:mt-6"
+          >
+            Description*
+            <textarea
+              type="text"
+              name="Description"
+              id="Description"
+              class="w-[100%] h-[7.5rem] px-4 py-4 bg-bgBlue mt-2 rounded-[0.5rem] opacity-[0.4]"
+            ></textarea>
+          </label>
+          <div class="col-span-2 lg:mt-8">
+            <p>Photo upload*</p>
+            <div class="flex max-lg:justify-between mt-2 lg:gap-8">
+              <button>
+                <img
+                  src="./upload-button.svg"
+                  alt="+"
+                  class="w-[72px] lg:w-[140px]"
+                />
+              </button>
+              <button>
+                <img
+                  src="./upload-button.svg"
+                  alt="+"
+                  class="w-[72px] lg:w-[140px]"
+                />
+              </button>
+              <button>
+                <img
+                  src="./upload-button.svg"
+                  alt="+"
+                  class="w-[72px] lg:w-[140px]"
+                />
+              </button>
+              <button>
+                <img
+                  src="./upload-button.svg"
+                  alt="+"
+                  class="w-[72px] lg:w-[140px]"
+                />
+              </button>
+              <button>
+                <img
+                  src="./upload-button.svg"
+                  alt="+"
+                  class="w-[72px] lg:w-[140px] hidden lg:block"
+                />
+              </button>
+            </div>
+          </div>
+          <label
+            for="Conpamy"
+            class="font-Manrope text-base font-medium leading-[1.2rem] lg:mt-14"
+          >
+            Conpamy*
+            <input
+              type="text"
+              name="Conpamy"
+              id="Conpamy"
+              class="w-[100%] px-4 py-4 bg-bgBlue mt-2 rounded-[0.5rem] opacity-[0.4]"
+            />
+          </label>
+          <label
+            for="Agent"
+            class="font-Manrope text-base font-medium leading-[1.2rem] lg:mt-14"
+          >
+            Agent name*
+            <input
+              type="text"
+              name="AgentName"
+              id="Agent"
+              class="w-[100%] px-4 py-4 bg-bgBlue mt-2 rounded-[0.5rem] opacity-[0.4]"
+            />
+          </label>
+          <label
+            for="Phone"
+            class="font-Manrope text-base font-medium leading-[1.2rem] lg:mt-8"
+          >
+            Phone number*
+            <input
+              type="number"
+              name="Phone"
+              id="Phone"
+              class="w-[100%] px-4 py-4 bg-bgBlue mt-2 rounded-[0.5rem] opacity-[0.4]"
+            />
+          </label>
+          <label
+            for="Email"
+            class="font-Manrope text-base font-medium leading-[1.2rem] lg:mt-8"
+          >
+            Email address*
+            <input
+              type="email"
+              name="Email"
+              id="Email"
+              class="w-[100%] px-4 py-4 bg-bgBlue mt-2 rounded-[0.5rem] opacity-[0.4]"
+            />
+          </label>
+          <div class="flex gap-4 col-span-2">
+            <button
+              class="px-2 py-[0.625rem] text-[#fff] whitespace-nowrap text-center bg-orange text-ellipsis font-Comfortaa text-sm font-semibold w-[9.75rem] rounded-[0.625rem]"
+            >
+              Add</button
+            ><button
+              class="px-2 py-[0.625rem] whitespace-nowrap text-center border-[1px] border-orange text-ellipsis font-Comfortaa text-sm font-semibold w-[9.75rem] rounded-[0.625rem]"
+            >
+              Save in drafts
+            </button>
+          </div>
+        </form>
       </div>
     </section>
     <footer

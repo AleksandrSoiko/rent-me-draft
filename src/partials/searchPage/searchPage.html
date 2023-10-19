@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Lato:wght@700&family=Manrope:wght@200;300;400;500;600&family=Montserrat:wght@400;500&family=Roboto:wght@400;500&family=Source+Sans+3:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <link rel="stylesheet" href="./main.css" /> -->
+    <script type="module" src="../../index.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          screens: {
+            md: '768px',
+            // => @media (min-width: 768px) { ... }
+            lg: '1024px',
+            // => @media (min-width: 1024px) { ... }
+            xl: '1440px',
+            // => @media (min-width: 1440px) { ... }
+          },
+          colors: {
+            blue: '#5774CD',
+            blue1: '#F2FAFD',
+            light_blue: '#D7E5FF',
+            blueText: '#008ACE',
+            black: '#000',
+            orange: '#FFB22C',
+            gray: '#444',
+            grayBg: 'rgba(255, 255, 255, 0.60)',
+            borderBlue: '#D7E5FF',
+            rose: 'rgba(255, 229, 210, 0.63)',
+          },
+          fontFamily: {
+            Comfortaa: ['Comfortaa'],
+            Lato: ['Lato'],
+            Manrope: ['Manrope'],
+            Montserrat: ['Montserrat'],
+            Roboto: ['Roboto'],
+            SourceSansPro: ['Source Sans Pro'],
+            SFProText: ['SF Pro Text'],
+            serif: ['Merriweather', 'serif'],
+          },
+          background: {
+            gradient:
+              'linear-gradient(0deg, rgba(255, 229, 210, 0.63) 0.23%, rgba(255, 244, 229, 0.00) 99.77%);',
+          },
+        },
+      };
+    </script>
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="flex justify-around items-center my-5 md:my-6">
+      <div class="md:hidden">
+        <svg width="41" height="40" viewBox="0 0 41 40">
+          <use href="../HomePage/sprite.svg#burger"></use>
+        </svg>
+      </div>
+      <a href="/">
+        <svg width="111" height="40" viewBox="0 0 111 40" class="md:hidden">
+          <use href="../HomePage/sprite.svg#logo"></use>
+        </svg>
+        <svg width="177" height="64" viewBox="0 0 177 64" class="max-md:hidden">
+          <use href="../HomePage/sprite.svg#logolg"></use></svg
+      ></a>
+      <nav class="max-md:hidden">
+        <ul
+          class="flex gap-10 font-Manrope text-lg font-semibold leading-[1.35rem]"
+        >
+          <li><a href="/">Buy</a></li>
+          <li><a href="/">Rent</a></li>
+          <li><a href="/">Sell</a></li>
+          <li><a href="/"> Agents</a></li>
+        </ul>
+      </nav>
+      <ul class="flex gap-4">
+        <li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="28"
+            height="28"
+            viewBox="0 0 28 28"
+            fill="none"
+          >
+            <path
+              d="M13.9999 25.8616C13.7701 25.862 13.5425 25.8169 13.3302 25.7291C13.1178 25.6412 12.925 25.5123 12.7626 25.3497L3.75712 16.3442C0.925625 13.5136 0.44875 9.14905 2.624 5.97018C3.80437 4.2438 5.50275 3.23143 7.53537 3.04243C9.75612 2.8368 12.1204 3.64793 13.9999 5.2378C15.8794 3.6488 18.2454 2.8368 20.4644 3.04243C22.497 3.23143 24.1954 4.2438 25.3757 5.97018C27.551 9.14993 27.0741 13.5136 24.2426 16.3442L15.2371 25.3497C14.8959 25.6901 14.4479 25.8616 13.9999 25.8616ZM8.20825 4.76093C8.03766 4.761 7.86717 4.76859 7.69725 4.78368C6.20012 4.92368 4.94537 5.67443 4.06775 6.95718C2.3685 9.44305 2.75787 12.8704 4.99437 15.1061L13.9999 24.1124L23.0054 15.1069C25.2419 12.8704 25.6312 9.44305 23.932 6.95805C23.0552 5.6753 21.7996 4.92455 20.3034 4.78543C18.3687 4.60955 16.1926 5.47055 14.6194 7.04468C14.5382 7.126 14.4418 7.19052 14.3356 7.23455C14.2295 7.27857 14.1157 7.30123 14.0007 7.30123C13.8858 7.30123 13.772 7.27857 13.6659 7.23455C13.5597 7.19052 13.4633 7.126 13.3821 7.04468C11.9454 5.60705 10.0055 4.76093 8.20825 4.76093Z"
+              fill="#0B0B0B"
+            />
+            <path
+              d="M6.85123 14.126C6.73632 14.1261 6.62251 14.1035 6.51634 14.0595C6.41018 14.0155 6.31376 13.951 6.23261 13.8696C4.61736 12.2544 4.30848 9.70726 5.51248 7.94501C6.16348 6.99301 7.07173 6.51001 8.21273 6.51001C8.4448 6.51001 8.66736 6.6022 8.83145 6.76629C8.99555 6.93039 9.08773 7.15294 9.08773 7.38501C9.08773 7.61707 8.99555 7.83963 8.83145 8.00373C8.66736 8.16782 8.4448 8.26001 8.21273 8.26001C7.64748 8.26001 7.28348 8.45513 6.95711 8.93288C6.21948 10.0118 6.43911 11.6025 7.46898 12.6324C7.59169 12.7545 7.67536 12.9104 7.70938 13.0802C7.74339 13.2499 7.72623 13.426 7.66005 13.586C7.59388 13.746 7.48168 13.8827 7.33768 13.9789C7.19368 14.075 7.02438 14.1262 6.85123 14.126Z"
+              fill="#FFB22C"
+            />
+          </svg>
+        </li>
+        <li>
+          <svg
+            width="28"
+            height="28"
+            viewBox="0 0 28 28"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M22.6082 27.125H5.39169C4.25331 27.125 3.21819 26.5956 2.55231 25.6716C1.88644 24.7476 1.71144 23.5979 2.07194 22.5181L2.68794 20.6692C3.32581 18.7574 5.03119 17.3635 7.03319 17.1176C8.86456 16.8936 11.5596 16.625 13.9999 16.625C16.4394 16.625 19.1353 16.8936 20.9676 17.1176C22.9687 17.3626 24.6741 18.7574 25.3119 20.6692L25.9279 22.5181C26.2884 23.5979 26.1134 24.7476 25.4467 25.6716C24.7808 26.5956 23.7466 27.125 22.6082 27.125ZM13.9999 18.375C11.6479 18.375 9.02906 18.6357 7.24669 18.8554C5.91056 19.019 4.77306 19.9482 4.34869 21.2231L3.73269 23.0711C3.55244 23.6119 3.63994 24.1859 3.97244 24.6479C4.30494 25.1099 4.82206 25.375 5.39169 25.375H22.6082C23.1769 25.375 23.6949 25.1099 24.0274 24.6488C24.3608 24.1867 24.4474 23.6119 24.2681 23.0711L23.6521 21.2231C23.2268 19.9482 22.0893 19.0181 20.7541 18.8554C18.9708 18.6357 16.3511 18.375 13.9999 18.375Z"
+              fill="#0B0B0B"
+            />
+            <path
+              d="M14 15.75C9.89888 15.75 6.5625 12.4136 6.5625 8.3125C6.5625 4.21138 9.89888 0.875 14 0.875C18.1011 0.875 21.4375 4.21138 21.4375 8.3125C21.4375 12.4136 18.1011 15.75 14 15.75ZM14 2.625C10.864 2.625 8.3125 5.1765 8.3125 8.3125C8.3125 11.4485 10.864 14 14 14C17.136 14 19.6875 11.4485 19.6875 8.3125C19.6875 5.1765 17.136 2.625 14 2.625Z"
+              fill="#0B0B0B"
+            />
+            <path
+              d="M10.5351 9.22245C10.06 9.22245 9.6706 8.84182 9.6601 8.36495C9.63647 7.19682 10.0696 6.08907 10.8798 5.24645C11.6892 4.40382 12.7786 3.92695 13.9467 3.90332C14.4385 3.91207 14.8296 4.27782 14.8392 4.76082C14.8488 5.24382 14.4647 5.6437 13.9817 5.65332C13.2808 5.66732 12.6272 5.95345 12.1416 6.45832C11.656 6.96407 11.3961 7.6282 11.4101 8.32995C11.4197 8.81295 11.0356 9.21282 10.5526 9.22245C10.5473 9.22245 10.5412 9.22245 10.5351 9.22245Z"
+              fill="#FFB22C"
+            />
+          </svg>
+        </li>
+      </ul>
+    </header>
+    <section
+      class="flex flex-col items-center mx-4 max-md:py-[1.44rem] md:pb-16"
+    >
+      <div>
+        <button
+          class="font-Comfortaa text-lg font-normal leading-[1.8rem] px-6 py-2 bg-blue rounded text-blue1 mr-2.5 relative md:text-xl md:font-semibold md:leading-[1.5rem] md:px-8 md:py-4"
+        >
+          Rent
+          <svg
+            class="absolute top-[43px] left-[40px] md:top-[55px] md:left-[46px] md:hidden"
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="13"
+            viewBox="0 0 18 13"
+            fill="none"
+          >
+            <path
+              d="M9 13L0.339746 0.777779L17.6603 0.77778L9 13Z"
+              fill="#5774CD"
+            />
+          </svg>
+          <svg
+            class="absolute top-[43px] left-[40px] md:top-[55px] md:left-[46px] max-md:hidden"
+            width="25"
+            height="17"
+            viewBox="0 0 25 17"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12.5 17L0.808656 0.5L24.1913 0.500002L12.5 17Z"
+              fill="#5774CD"
+            />
+          </svg>
+        </button>
+        <button
+          class="font-Comfortaa text-lg px-6 py-2 bg-blue1 rounded text-blue md:text-xl md:font-semibold md:leading-[1.5rem] md:px-8 md:py-4"
+        >
+          Buy
+        </button>
+      </div>
+      <div
+        class="w-[328px] md:w-[46rem] lg:w-[75.75rem] md:mt-4 shadow-[-4px_-4px_8px_0px_rgba(215,229,255,0.4),4px_4px_8px_0_rgba(215,229,255,0.4)] max-lg:py-6 mt-3 rounded-[0.75rem] md:flex flex-col items-center"
+      >
+        <div
+          class="flex max-lg:flex-col lg:px-10 md:py-8 gap-4 md:gap-8 lg:shadow-[-4px_-4px_8px_0px_rgba(215,229,255,0.4),4px_4px_8px_0_rgba(215,229,255,0.4)] lg:w-[100%]"
+        >
+          <div
+            class="flex max-md:flex-col lg:gap-[3.75rem] max-md:mr-[auto] max-md:ml-[auto] gap-4 md:gap-6 md:justify-center"
+          >
+            <label
+              for="location"
+              class="lg:border-r-[1px] border-light_blue lg:w-[245px] max-md:px-6 max-md:py-2 font-Manrope text-lg max-md:border-b-[1px] border-[#F2FAFD] md:text-xl leading-[1.35rem]"
+              >Location
+              <div
+                class="flex items-center w-[232px] max-md:mt-2 mt-4 md:w-[13rem]"
+              >
+                <input
+                  class="w-[100%] text-sm font-extralight md:text-lg md:font-light leading-[1.05rem] md:leading-[1.35]"
+                  type="text"
+                  id="location"
+                  placeholder="Enter post code"
+                />
+                <svg
+                  width="16"
+                  height="19"
+                  viewBox="0 0 16 19"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8.06843 19C7.99971 19 7.93098 18.9762 7.87546 18.9289C7.55944 18.6589 0.13623 12.2651 0.13623 7.94898C0.13623 3.56591 3.69457 0 8.06843 0C12.4418 0 16 3.56591 16 7.94898C16 12.2651 8.57728 18.6587 8.2614 18.9289C8.20574 18.9762 8.13701 19 8.06843 19ZM8.06843 0.59375C4.02203 0.59375 0.72998 3.89337 0.72998 7.94898C0.72998 11.6246 6.88984 17.2636 8.06843 18.3084C9.24673 17.2636 15.4063 11.6246 15.4063 7.94898C15.4063 3.89337 12.1145 0.59375 8.06843 0.59375Z"
+                    fill="#0B0B0B"
+                  />
+                  <path
+                    d="M8.07027 11.7632C5.97077 11.7632 4.2627 10.0522 4.2627 7.94894C4.2627 5.84677 5.97091 4.13647 8.07027 4.13647C10.1675 4.13647 11.8738 5.84662 11.8738 7.94894C11.8738 10.0522 10.1675 11.7632 8.07027 11.7632ZM8.07027 4.73022C6.29822 4.73022 4.85645 6.17408 4.85645 7.94894C4.85645 9.7247 6.29822 11.1694 8.07027 11.1694C9.84023 11.1694 11.2801 9.7247 11.2801 7.94894C11.2801 6.17408 9.84023 4.73022 8.07027 4.73022Z"
+                    fill="#0B0B0B"
+                  />
+                  <path
+                    d="M2.7002 7.94852H2.10645C2.10645 7.84565 2.10912 7.74338 2.11416 7.64185L2.70717 7.67109C2.70257 7.76297 2.7002 7.85545 2.7002 7.94852Z"
+                    fill="#0B0B0B"
+                  />
+                  <path
+                    d="M2.75909 7.14797L2.17188 7.06039C2.20082 6.86549 2.24001 6.67 2.28825 6.47896L2.86389 6.62428C2.82055 6.79632 2.78537 6.97252 2.75909 7.14797ZM3.02049 6.11366L2.46222 5.91163C2.52916 5.72638 2.6065 5.54232 2.69185 5.36449L3.22712 5.62129C3.15037 5.78145 3.08076 5.94696 3.02049 6.11366ZM3.48198 5.15178L2.97477 4.84318C3.07734 4.67455 3.18941 4.50934 3.30802 4.3523L3.78183 4.70988C3.6751 4.85134 3.57431 4.99993 3.48198 5.15178ZM4.12442 4.29975L3.68802 3.89719C3.82131 3.75261 3.96352 3.61278 4.11091 3.48186L4.50561 3.92539C4.37276 4.0434 4.24451 4.16942 4.12442 4.29975ZM4.92138 3.59066L4.57255 3.11017C4.73227 2.99424 4.89927 2.88529 5.06908 2.78613L5.36862 3.29884C5.21559 3.38805 5.06522 3.48631 4.92138 3.59066ZM5.84214 3.05288L5.59514 2.51286C5.7743 2.43092 5.95955 2.35715 6.14599 2.29362L6.33763 2.8556C6.16989 2.9129 6.0032 2.97925 5.84214 3.05288ZM6.85077 2.70895L6.71644 2.13063C6.90792 2.0861 7.10416 2.05077 7.2998 2.02539L7.37624 2.61424C7.1999 2.63695 7.02326 2.66887 6.85077 2.70895Z"
+                    fill="#0B0B0B"
+                  />
+                  <path
+                    d="M7.79425 2.57668L7.76367 1.98367C7.86565 1.97848 7.96807 1.97595 8.07108 1.97595V2.5697C7.97846 2.5697 7.88598 2.57193 7.79425 2.57668Z"
+                    fill="#0B0B0B"
+                  />
+                </svg>
+              </div>
+            </label>
+            <label
+              for="property"
+              class="lg:border-r-[1px] border-light_blue lg:w-[245px] max-md:px-6 max-md:py-2 font-Manrope text-lg max-md:border-b-[1px] border-[#F2FAFD] md:text-xl leading-[1.35rem]"
+              >Property
+              <div
+                class="flex items-center w-[232px] max-md:mt-2 mt-4 md:w-[13rem]"
+              >
+                <input
+                  class="w-[100%] text-sm font-extralight md:text-lg md:font-light leading-[1.05rem] md:leading-[1.35]"
+                  type="text"
+                  id="property"
+                  placeholder="Select property type"
+                />
+                <svg
+                  width="16"
+                  height="19"
+                  viewBox="0 0 16 19"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9.50002 13.6799L1.52002 5.85727L2.05734 5.31995L9.50002 12.6053L16.9427 5.31995L17.48 5.85727L9.50002 13.6799Z"
+                    fill="#0B0B0B"
+                  />
+                </svg>
+              </div>
+            </label>
+            <label
+              for="rentRange"
+              class="lg:w-[245px] max-md:px-6 max-md:py-2 font-Manrope text-lg max-md:border-b-[1px] border-[#F2FAFD] md:text-xl leading-[1.35rem]"
+              >Rent Range
+              <div
+                class="flex items-center w-[232px] max-md:mt-2 mt-4 md:w-[13rem]"
+              >
+                <input
+                  class="w-[100%] text-sm font-extralight md:text-lg md:font-light leading-[1.05rem] md:leading-[1.35]"
+                  type="text"
+                  id="rentRange"
+                  placeholder="Select a rent range"
+                />
+                <svg
+                  width="16"
+                  height="19"
+                  viewBox="0 0 16 19"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9.50002 13.6799L1.52002 5.85727L2.05734 5.31995L9.50002 12.6053L16.9427 5.31995L17.48 5.85727L9.50002 13.6799Z"
+                    fill="#0B0B0B"
+                  />
+                </svg>
+              </div>
+            </label>
+          </div>
+          <button
+            class="bg-orange max-lg:hidden px-8 py-[6px] md:py-4 flex gap-2 rounded-[10px] items-center font-Comfortaa font-bold height-normal text-white-700 text-center"
+          >
+            <svg
+              width="21"
+              height="20"
+              viewBox="0 0 21 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.6875 13.75C4.06875 13.75 1.125 10.8062 1.125 7.1875C1.125 3.56875 4.06875 0.625 7.6875 0.625C11.3062 0.625 14.25 3.56875 14.25 7.1875C14.25 10.8062 11.3062 13.75 7.6875 13.75ZM7.6875 1.875C4.75813 1.875 2.375 4.25813 2.375 7.1875C2.375 10.1169 4.75813 12.5 7.6875 12.5C10.6169 12.5 13 10.1169 13 7.1875C13 4.25813 10.6169 1.875 7.6875 1.875Z"
+                fill="white"
+              />
+              <path
+                d="M4.25 7.8125C3.905 7.8125 3.625 7.53312 3.625 7.1875C3.625 4.9475 5.4475 3.125 7.6875 3.125C8.0325 3.125 8.3125 3.40438 8.3125 3.75C8.3125 4.09562 8.0325 4.375 7.6875 4.375C6.13688 4.375 4.875 5.63688 4.875 7.1875C4.875 7.53312 4.595 7.8125 4.25 7.8125Z"
+                fill="#FFB22C"
+              />
+              <path
+                d="M17.9999 19.4812C17.5193 19.4812 17.0399 19.2987 16.6743 18.9331L10.8068 13.0656C10.5624 12.8212 10.5624 12.4262 10.8068 12.1818C11.0512 11.9374 11.4462 11.9374 11.6906 12.1818L17.5581 18.0493C17.8024 18.2937 18.1974 18.2937 18.4418 18.0493L18.5493 17.9418C18.7931 17.6981 18.7931 17.3018 18.5493 17.0581L12.6818 11.1906C12.4374 10.9462 12.4374 10.5512 12.6818 10.3068C12.9262 10.0624 13.3212 10.0624 13.5656 10.3068L19.4331 16.1743C20.1643 16.9056 20.1643 18.0943 19.4331 18.8256L19.3256 18.9331C18.9599 19.2987 18.4806 19.4812 17.9999 19.4812Z"
+                fill="white"
+              />
+            </svg>
+            <span class="w-[93px] text-center text-[#fff] text-base"
+              >Search</span
+            >
+          </button>
+        </div>
+        <div
+          class="px-6 lg:px-10 mt-4 lg:mt-10 grid-cols-2 max-md:flex md:grid max-md:flex-col max-md:gap-4 md:gap-8 lg:gap-5 justify-center"
+        >
+          <div
+            class="flex flex-col md:w-[20rem] lg:w-[33.75rem] lg:h-[18.18rem]"
+          >
+            <p class="font-Comfortaa text-lg leading-[1.35rem] mb-2">
+              Bedrooms
+            </p>
+            <div class="flex gap-5 max-md:justify-center">
+              <label
+                for="minB"
+                class="relative font-Manrope text-base leading-[1.2rem]"
+                ><p>Min beds</p>
+                <input
+                  type="text"
+                  class="px-4 py-3 w-[8.125rem] lg:w-[11.25rem] border-[1px] border-blue1 rounded-[0.5rem] mt-2 text-sm"
+                  placeholder="No min"
+                /><svg
+                  class="absolute top-[40px] right-[10px]"
+                  width="19"
+                  height="19"
+                  viewBox="0 0 19 19"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9.49953 13.6799L1.51953 5.85727L2.05685 5.31995L9.49953 12.6053L16.9422 5.31995L17.4795 5.85727L9.49953 13.6799Z"
+                    fill="#0B0B0B"
+                  />
+                </svg>
+              </label>
+              <label
+                for="maxB"
+                class="relative font-Manrope text-base leading-[1.2rem]"
+                ><p>Max beds</p>
+                <input
+                  type="text"
+                  class="px-4 py-3 w-[8.125rem] lg:w-[11.25rem] border-[1px] border-blue1 rounded-[0.5rem] mt-2 text-sm"
+                  placeholder="2"
+                /><svg
+                  class="absolute top-[40px] right-[16px]"
+                  width="19"
+                  height="19"
+                  viewBox="0 0 19 19"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9.49953 13.6799L1.51953 5.85727L2.05685 5.31995L9.49953 12.6053L16.9422 5.31995L17.4795 5.85727L9.49953 13.6799Z"
+                    fill="#0B0B0B"
+                  />
+                </svg>
+              </label>
+            </div>
+          </div>
+          <div
+            class="flex flex-col md:w-[20rem] lg:w-[33.75rem] lg:h-[18.18rem]"
+          >
+            <p class="font-Comfortaa text-lg leading-[1.35rem] mb-2">Price</p>
+            <div class="flex gap-5 max-md:justify-center">
+              <label
+                for="minB"
+                class="relative font-Manrope text-base leading-[1.2rem]"
+                ><p>Min price</p>
+                <input
+                  type="text"
+                  class="px-4 py-3 w-[8.125rem] lg:w-[11.25rem] md:w-[9.375rem] border-[1px] border-blue1 rounded-[0.5rem] mt-2 text-sm"
+                  placeholder="No min"
+                /><svg
+                  class="absolute top-[40px] right-[10px]"
+                  width="19"
+                  height="19"
+                  viewBox="0 0 19 19"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9.49953 13.6799L1.51953 5.85727L2.05685 5.31995L9.49953 12.6053L16.9422 5.31995L17.4795 5.85727L9.49953 13.6799Z"
+                    fill="#0B0B0B"
+                  />
+                </svg>
+              </label>
+              <label
+                for="maxB"
+                class="relative font-Manrope text-base leading-[1.2rem]"
+                ><p>Max price</p>
+                <input
+                  type="text"
+                  class="px-4 py-3 w-[8.125rem] lg:w-[11.25rem] md:w-[9.375rem] border-[1px] border-blue1 rounded-[0.5rem] mt-2 text-sm"
+                  placeholder="No min"
+                /><svg
+                  class="absolute top-[40px] right-[16px]"
+                  width="19"
+                  height="19"
+                  viewBox="0 0 19 19"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9.49953 13.6799L1.51953 5.85727L2.05685 5.31995L9.49953 12.6053L16.9422 5.31995L17.4795 5.85727L9.49953 13.6799Z"
+                    fill="#0B0B0B"
+                  />
+                </svg>
+              </label>
+            </div>
+          </div>
+          <div class="flex flex-col md:w-[20rem] lg:w-[33.75rem] items-start">
+            <p class="font-Comfortaa text-lg leading-[1.35rem] mt-4">
+              Furnished
+            </p>
+            <div class="max-lg:hidden grid grid-cols-2">
+              <label
+                class="w-[11.25rem] h-12 flex gap-4 items-center font-Manrope text-xl leading-[1.5rem]"
+                ><input
+                  type="radio"
+                  name="name"
+                  checked
+                  class="checked:bg-orange checked:border-orange"
+                />
+                Any
+              </label>
+              <label
+                class="w-[11.25rem] h-12 flex gap-4 items-center font-Manrope text-xl leading-[1.5rem]"
+                ><input
+                  type="radio"
+                  name="name"
+                  class="checked:bg-orange checked:border-orange"
+                />
+                Part furnished</label
+              >
+              <label
+                class="w-[11.25rem] h-12 flex gap-4 items-center font-Manrope text-xl leading-[1.5rem]"
+                ><input
+                  type="radio"
+                  name="name"
+                  class="checked:bg-orange checked:border-orange"
+                />
+                Furnished</label
+              >
+              <label
+                class="w-[11.25rem] h-12 flex gap-4 items-center font-Manrope text-xl leading-[1.5rem]"
+                ><input
+                  type="radio"
+                  name="name"
+                  class="checked:bg-orange checked:border-orange"
+                />
+                Unfurnished</label
+              >
+            </div>
+            <div
+              class="flex flex-wrap justify-center mt-4 w-[17.5rem] lg:hidden"
+            >
+              <button
+                class="border-[1px] border-blue1 text-center w-[50%] py-2 bg-blue text-[#fff]"
+              >
+                Any
+              </button>
+              <button
+                class="border-[1px] border-blue1 text-center w-[50%] py-2 text-[#444]"
+              >
+                Part furnished
+              </button>
+              <button
+                class="border-[1px] border-blue1 text-center w-[50%] py-2 text-[#444]"
+              >
+                Furnished
+              </button>
+              <button
+                class="border-[1px] border-blue1 text-center w-[50%] py-2 text-[#444]"
+              >
+                Unfurnished
+              </button>
+            </div>
+          </div>
+          <div class="flex flex-col md:w-[20rem] lg:w-[33.75rem]">
+            <p class="font-Comfortaa text-lg leading-[1.35rem] mt-2">Added</p>
+            <div class="max-lg:hidden grid grid-cols-2">
+              <label
+                class="w-[11.25rem] h-12 flex gap-4 items-center font-Manrope text-xl leading-[1.5rem]"
+                ><input
+                  type="radio"
+                  name="Added"
+                  checked
+                  class="checked:bg-orange checked:border-orange"
+                />
+                Any time</label
+              >
+              <label
+                class="w-[11.25rem] h-12 flex gap-4 items-center font-Manrope text-xl leading-[1.5rem]"
+                ><input
+                  type="radio"
+                  name="Added"
+                  class="checked:bg-orange checked:border-orange"
+                />
+                24 hours</label
+              >
+              <label
+                class="w-[11.25rem] h-12 flex gap-4 items-center font-Manrope text-xl leading-[1.5rem]"
+                ><input
+                  type="radio"
+                  name="Added"
+                  class="checked:bg-orange checked:border-orange"
+                />
+                3 days</label
+              >
+              <label
+                class="w-[11.25rem] h-12 flex gap-4 items-center font-Manrope text-xl leading-[1.5rem]"
+                ><input
+                  type="radio"
+                  name="Added"
+                  class="checked:bg-orange checked:border-orange"
+                />
+                7 days</label
+              >
+            </div>
+            <div
+              class="flex flex-wrap justify-center mt-4 w-[17.5rem] lg:hidden"
+            >
+              <button
+                class="border-[1px] border-blue1 text-center w-[50%] py-2"
+              >
+                Any
+              </button>
+              <button
+                class="border-[1px] border-blue1 text-center w-[50%] py-2 text-[#444]"
+              >
+                24 hours
+              </button>
+              <button
+                class="border-[1px] border-blue1 text-center w-[50%] py-2 text-[#444] bg-blue text-[#fff]"
+              >
+                3 days
+              </button>
+              <button
+                class="border-[1px] border-blue1 text-center w-[50%] py-2 text-[#444]"
+              >
+                7 days
+              </button>
+            </div>
+          </div>
+        </div>
+        <button
+          class="flex mx-[auto] justify-center items-center gap-4 font-Montserrat text-base leading-[1.2rem] my-4 md:my-8 lg:text-xl lg:leading-[1.5rem]"
+        >
+          <p>Show less filters</p>
+          <svg
+            width="25"
+            height="26"
+            viewBox="0 0 25 26"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M17.1357 11.7505H14.4706V19.1736H10.5284V11.7505H7.86328L12.4996 6.6439L17.1357 11.7505ZM13.7206 18.4236V11.0005H15.4417L12.4996 7.75971L9.55753 11.0005H11.2784V18.4236H13.7206Z"
+              fill="#FFB22C"
+            />
+            <path
+              d="M13.7206 18.4236V11.0005H15.4417L12.4996 7.75971L9.55753 11.0005H11.2784V18.4236H13.7206Z"
+              fill="#FFB22C"
+            />
+            <path
+              d="M17.1357 11.7505H14.4706V19.1736H10.5284V11.7505H7.86328L12.4996 6.6439L17.1357 11.7505ZM13.7206 18.4236V11.0005H15.4417L12.4996 7.75971L9.55753 11.0005H11.2784V18.4236H13.7206Z"
+              stroke="#FFB22C"
+              stroke-width="0.5"
+            />
+            <path
+              d="M13.7206 18.4236V11.0005H15.4417L12.4996 7.75971L9.55753 11.0005H11.2784V18.4236H13.7206Z"
+              stroke="#FFB22C"
+              stroke-width="0.5"
+            />
+            <path
+              d="M24.5 12.9999C24.5 19.5573 19.1167 24.8921 12.4998 24.8921V24.1421C18.7033 24.1421 23.75 19.1437 23.75 12.9999C23.75 6.85609 18.7033 1.85772 12.4998 1.85772C6.29675 1.85772 1.25 6.85609 1.25 12.9999H0.5C0.5 6.44247 5.88312 1.10772 12.4998 1.10772C19.1167 1.10772 24.5 6.44247 24.5 12.9999Z"
+              fill="#0B0B0B"
+              stroke="#0B0B0B"
+            />
+            <path
+              d="M12.4999 24.1421V24.8921C12.3737 24.8921 12.2473 24.8904 12.1221 24.8863L12.1464 24.1367C12.2636 24.1406 12.3818 24.1421 12.4999 24.1421Z"
+              fill="#0B0B0B"
+            />
+            <path
+              d="M11.4125 24.0908L11.3417 24.8374C11.0767 24.8123 10.809 24.7778 10.5459 24.7352L10.6661 23.995C10.9129 24.0349 11.1639 24.0672 11.4125 24.0908ZM9.92773 23.8497L9.7586 24.5802C9.4991 24.5202 9.23829 24.4504 8.98329 24.3732L9.20098 23.6554C9.44004 23.728 9.68454 23.7932 9.92773 23.8497ZM8.48791 23.4128L8.2226 24.1142C7.9736 24.0201 7.72423 23.916 7.48123 23.805L7.79266 23.1227C8.02066 23.227 8.25448 23.3245 8.48791 23.4128ZM7.11879 22.7873L6.76216 23.4471C6.52798 23.3205 6.29473 23.1842 6.06898 23.0419L6.46873 22.4072C6.68041 22.5407 6.89904 22.6686 7.11879 22.7873ZM5.84566 21.985L5.40429 22.5913C5.18885 22.4346 4.97585 22.2683 4.77148 22.0977L5.25204 21.522C5.44385 21.6822 5.64354 21.838 5.84566 21.985ZM4.69085 21.0203L4.1726 21.5625C3.97948 21.378 3.79048 21.1849 3.61104 20.989L4.16435 20.4827C4.33254 20.6663 4.50973 20.8472 4.69085 21.0203ZM3.67498 19.911L3.08923 20.3794C2.92273 20.1713 2.76129 19.9547 2.60941 19.7359L3.22535 19.3082C3.36766 19.5132 3.51898 19.7158 3.67498 19.911ZM2.81735 18.6763L2.17404 19.0618C2.03735 18.8335 1.90648 18.5972 1.78516 18.36L2.45323 18.019C2.56666 18.2412 2.68929 18.4624 2.81735 18.6763ZM2.13466 17.3385L1.44504 17.6331C1.34023 17.3877 1.24273 17.136 1.15516 16.885L1.86335 16.6382C1.94529 16.8732 2.0366 17.1088 2.13466 17.3385ZM1.64023 15.9201L0.916852 16.1181C0.846539 15.861 0.784102 15.5982 0.731602 15.3366L1.46698 15.1887C1.51591 15.4333 1.57441 15.6795 1.64023 15.9201ZM1.34379 14.4469L0.600164 14.5446C0.566414 14.2877 0.541102 14.026 0.524414 13.7667L1.27291 13.7188C1.28848 13.9615 1.31229 14.2065 1.34379 14.4469Z"
+              fill="#0B0B0B"
+            />
+            <path
+              d="M1.25544 13.3539L0.505812 13.3772C0.501875 13.2521 0.5 13.1261 0.5 12.9999H1.25C1.25 13.1184 1.25169 13.2366 1.25544 13.3539Z"
+              fill="#0B0B0B"
+            />
+          </svg>
+        </button>
+        <div
+          class="flex gap-4 md:gap-[1.12rem] justify-center max-md:py-2 lg:hidden"
+        >
+          <button>
+            <svg
+              width="33"
+              height="32"
+              viewBox="0 0 33 32"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <use href="../HomePage/sprite.svg#filter-setting"></use>
+            </svg></button
+          ><button
+            class="bg-orange px-8 py-[6px] md:py-4 flex gap-2 rounded-[10px] items-center font-Comfortaa font-bold text-lg height-normal text-white-700 text-center"
+          >
+            <svg
+              width="21"
+              height="20"
+              viewBox="0 0 21 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.6875 13.75C4.06875 13.75 1.125 10.8062 1.125 7.1875C1.125 3.56875 4.06875 0.625 7.6875 0.625C11.3062 0.625 14.25 3.56875 14.25 7.1875C14.25 10.8062 11.3062 13.75 7.6875 13.75ZM7.6875 1.875C4.75813 1.875 2.375 4.25813 2.375 7.1875C2.375 10.1169 4.75813 12.5 7.6875 12.5C10.6169 12.5 13 10.1169 13 7.1875C13 4.25813 10.6169 1.875 7.6875 1.875Z"
+                fill="white"
+              />
+              <path
+                d="M4.25 7.8125C3.905 7.8125 3.625 7.53312 3.625 7.1875C3.625 4.9475 5.4475 3.125 7.6875 3.125C8.0325 3.125 8.3125 3.40438 8.3125 3.75C8.3125 4.09562 8.0325 4.375 7.6875 4.375C6.13688 4.375 4.875 5.63688 4.875 7.1875C4.875 7.53312 4.595 7.8125 4.25 7.8125Z"
+                fill="#FFB22C"
+              />
+              <path
+                d="M17.9999 19.4812C17.5193 19.4812 17.0399 19.2987 16.6743 18.9331L10.8068 13.0656C10.5624 12.8212 10.5624 12.4262 10.8068 12.1818C11.0512 11.9374 11.4462 11.9374 11.6906 12.1818L17.5581 18.0493C17.8024 18.2937 18.1974 18.2937 18.4418 18.0493L18.5493 17.9418C18.7931 17.6981 18.7931 17.3018 18.5493 17.0581L12.6818 11.1906C12.4374 10.9462 12.4374 10.5512 12.6818 10.3068C12.9262 10.0624 13.3212 10.0624 13.5656 10.3068L19.4331 16.1743C20.1643 16.9056 20.1643 18.0943 19.4331 18.8256L19.3256 18.9331C18.9599 19.2987 18.4806 19.4812 17.9999 19.4812Z"
+                fill="white"
+              />
+            </svg>
+            <span class="w-[93px] text-center text-[#fff] text-base"
+              >Search</span
+            >
+          </button>
+        </div>
+      </div>
+    </section>
+    <footer
+      class="py-12 px-4 md:px-8 md:pt-10 md:pb-16 font-Manrope text-lg font-semibold leading-[1.35rem] max-md:bg-gradient-to-t from-rose to-transparent"
+    >
+      <ul
+        class="flex flex-col md:justify-around md:flex-row-reverse max-md:grid mx-[auto] grid-cols-2 justify-items-stretch"
+      >
+        <li class="row-span-1">
+          <ul class="flex flex-col gap-4">
+            <li>Buy</li>
+            <li>Rent</li>
+            <li>Sell</li>
+            <li>Agents</li>
+          </ul>
+        </li>
+        <li class="col-span-1">
+          <ul class="flex flex-col gap-4">
+            <li>Terms of use</li>
+            <li>Security rules</li>
+            <li>Privacy Policy</li>
+            <li>Cookies settings</li>
+          </ul>
+        </li>
+        <li class="col-span-2 max-md:mt-8">
+          <div>
+            <svg
+              width="177"
+              height="64"
+              viewBox="0 0 177 64"
+              fill="none"
+              class="max-md:hidden"
+            >
+              <use href="../HomePage/sprite.svg#logoLg"></use>
+            </svg>
+            <svg width="111" height="40" viewBox="0 0 111 40" class="md:hidden">
+              <use href="../HomePage/sprite.svg#logo"></use>
+            </svg>
+            <p class="mt-4">
+              <span>2023</span><span>©</span>Real Estate. All rights reserved
+            </p>
+            <div class="flex gap-5 mt-6">
+              <svg width="41" height="40" viewBox="0 0 41 40">
+                <use href="../HomePage/sprite.svg#facebook"></use>
+              </svg>
+              <svg width="41" height="40" viewBox="0 0 41 40">
+                <use href="../HomePage/sprite.svg#instagram"></use>
+              </svg>
+              <svg width="41" height="40" viewBox="0 0 41 40">
+                <use href="../HomePage/sprite.svg#twitter"></use>
+              </svg>
+              <svg width="41" height="40" viewBox="0 0 41 40">
+                <use href="../HomePage/sprite.svg#telegram"></use>
+              </svg>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </footer>
+  </body>
+</html>
